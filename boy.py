@@ -34,9 +34,11 @@ class AutoRun:
     def enter(boy, e):
         if auto_run(e):
             boy.dir, boy.action = 1, 1
+        boy.y += 25
 
     @staticmethod
     def exit(boy, e):
+        boy.y -= 25
         pass
 
     @staticmethod
