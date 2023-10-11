@@ -34,7 +34,6 @@ class AutoRun:
     def enter(boy, e):
         if auto_run(e):
             boy.dir, boy.action = 1, 1
-            print('auto')
 
     @staticmethod
     def exit(boy, e):
@@ -47,7 +46,7 @@ class AutoRun:
             boy.dir = -1
         elif boy.x < 0:
             boy.dir = 1
-        boy.x += boy.dir * 5
+        boy.x += boy.dir * 8
 
         if get_time() - boy.wait_time > 5:
             boy.state_machine.handle_event(('TIME_OUT', 0))
@@ -55,9 +54,9 @@ class AutoRun:
     @staticmethod
     def draw(boy):
         if boy.dir == 1:
-            boy.image.clip_draw(boy.frame * 100, boy.action * 100, 100, 100, boy.x, boy.y)
+            boy.image.clip_draw(boy.frame * 100, boy.action * 100, 100, 100, boy.x, boy.y,200, 200)
         elif boy.dir == -1:
-            boy.image.clip_composite_draw(boy.frame * 100, boy.action * 100, 100, 100, 0, 'h', boy.x, boy.y, 100, 100)
+            boy.image.clip_composite_draw(boy.frame * 100, boy.action * 100, 100, 100, 0, 'h', boy.x, boy.y, 200, 200)
 
 
 class Run:
