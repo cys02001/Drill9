@@ -56,7 +56,7 @@ class AutoRun:
     @staticmethod
     def draw(boy):
         if boy.dir == 1:
-            boy.image.clip_draw(boy.frame * 100, boy.action * 100, 100, 100, boy.x, boy.y,200, 200)
+            boy.image.clip_draw(boy.frame * 100, boy.action * 100, 100, 100, boy.x, boy.y, 200, 200)
         elif boy.dir == -1:
             boy.image.clip_composite_draw(boy.frame * 100, boy.action * 100, 100, 100, 0, 'h', boy.x, boy.y, 200, 200)
 
@@ -71,6 +71,7 @@ class Run:
             boy.dir, boy.action = -1, 0
 
         boy.wait_time = get_time()
+
     @staticmethod
     def exit(boy, e):
         pass
